@@ -1,0 +1,74 @@
+IGPU and DevCloud
+------------------
+
+GPU Results - Without batches
+Time taken to load model = 230.99339747428894 seconds
+Time Taken to run 100 Inference is = 15.652465581893921 seconds
+
+GPU Results - With batches
+Time taken to load model = 230.26258063316345 seconds
+Time Taken to run 100 Inference is = 8.61396074295044 seconds
+
+CPU Results - Without batches
+Time taken to load model = 1.3718461990356445 seconds
+Time Taken to run 100 Inference is = 16.362342357635498 seconds
+
+CPU Results - With batches
+Time taken to load model = 1.2659246921539307 seconds
+Time Taken to run 100 Inference is = 13.811943769454956 seconds
+
+GPU performance with batching is better. Also FPS for GPU is higher.
+
+VPU and DevCloud
+------------------
+
+Running on the NCS2
+Time taken to load model = 2.6436734199523926 seconds
+Time Taken to run 100 inference is = 3.200526475906372 seconds
+
+Running on the CPU
+Time taken to load model = 1.0452449321746826 seconds
+Time Taken to run 100 inference is = 0.3466372489929199 seconds
+
+Running on the GPU
+Time taken to load model = 40.90345025062561 seconds
+Time Taken to run 100 inference is = 0.5753803253173828 seconds
+
+VPU inference time is high.
+
+Multi Device Plugin on DevCloud
+------------------------------------
+
+Running on the CPU and VPU (NCS2)
+Time taken to load model = 3.606419801712036 seconds
+Time Taken to run 1000 inference is = 3.6105456352233887 seconds
+
+Running on the GPU and VPU (NCS2)
+Time taken to load model = 43.46854591369629 seconds
+Time Taken to run 1000 inference is = 5.944385528564453 seconds
+
+Running on the CPU, GPU and VPU (NCS2)
+Time taken to load model = 44.702425479888916 seconds
+Time Taken to run 1000 inference is = 3.481273651123047 seconds
+
+Inference and FPS is good for Multi Device (CPU, GPU, Myraid)
+
+FPGA and the DevCloud
+---------------------
+Time taken to load model = 3.877723455429077 seconds
+Time Taken to run 10 Inference on FPGA is = 0.08437466621398926 seconds
+
+Heterogeneous Plugin on DevCloud
+----------------------------------
+
+Running on the FPGA and CPU
+Time taken to load model = 3.881178140640259 seconds
+Time Taken to run 100 Inference is = 0.7587838172912598 seconds
+
+Running on the GPU and CPU
+Time taken to load model = 40.90473771095276 seconds
+Time Taken to run 100 Inference is = 0.5932755470275879 seconds
+
+Running on the FPGA, GPU, and CPU
+Time taken to load model = 11.781751155853271 seconds
+Time Taken to run 100 Inference is = 1.050299882888794 seconds
