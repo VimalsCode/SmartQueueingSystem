@@ -62,7 +62,6 @@ class PersonDetect:
         :param image: None
         :return: None
         '''
-        #core = IECore()
         self.net = self.core.load_network(network=self.model, device_name=args.device)        
         
     def predict(self, image):
@@ -72,8 +71,8 @@ class PersonDetect:
         :return: detected people count and drawn boundary in the frame    
         '''
         # apply preprocessing
-        preprocessed_image = self.preprocess_input(image)
-        self.net.start_async(request_id=0,inputs= {self.input_name:preprocessed_image})
+        processed_frame = self.preprocess_input(image)
+        self.net.start_async(request_id=0,inputs= {self.input_name:processed_frame})
         if self.net.requests[0].wait(-1) == 0:
             network_result = self.net.requests[0].outputs[self.output_name]
             # extract required info
@@ -93,7 +92,7 @@ class PersonDetect:
         :return: image with rectangular bounding box drawn
         '''
         for bounding_box in bounding_boxes: 
-            cv2.rectangle(image, bounding_box[0:2], bounding_box[2:4], (0, 55, 255), 1)
+            cv2.rectangle(image, bounding_box[0:2], bounding_box[2:4], (0, 0, 255), 5)
         return image
 
     def preprocess_outputs(self, outputs, image):
